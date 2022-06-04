@@ -1,6 +1,7 @@
 
 import './App.css';
 import React from 'react';
+import Person from './components/person.jsx'; //Importamos componentes
 
 //  Complemento funcional con props
 
@@ -22,15 +23,15 @@ import React from 'react';
 }
  */
 
-//  Complemento funcional con dicersos datos
+//  Complemento funcional con objeto, se hace tambien con archivo separado en components
 
-const Person = props => {
+/* const Person = props => {
   return (<div>
     <span>Nombre: {props.name}, </span>
     <span> Apellido: {props.surname}, </span>
     <span>Edad: {props.age}.</span>
         </div>)
-}
+} */
 
 //  Funcion principal
 
