@@ -1,6 +1,6 @@
 
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Person from './components/person.jsx'; //Importamos componentes
 import Counter from './components/counter.jsx';
 
@@ -83,11 +83,19 @@ function App() {
 function App() {
     const hola = <h2>Bienvenido al curso de React</h2>
     const saludo = persona => <h2>Hola {persona}</h2> //Funcion flecha
+    const [showCounters, setShowCounters] = useState(true);
+    const quitarCounter = () => setShowCounters(false);
+    const ponerCounter = () => setShowCounters(true);
   return (
     <div className="App">
       <header className="App-header">
+        {showCounters && <div>
         <Counter initialValue = {0} step = {2}/>
-      
+        <Counter initialValue = {0} step = {5}/>
+        </div>
+        }
+        <button onClick={quitarCounter}>Quitar counters</button>
+        <button onClick={ponerCounter}>Poner counters</button>
       </header>
     </div>
   );

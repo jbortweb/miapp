@@ -1,6 +1,8 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 
-/* class Counter extends Component {
+                //Componente de clase
+
+ /* class Counter extends Component {
     constructor(props) {
         super(props);
 
@@ -13,17 +15,32 @@ import React, {Component, useState} from 'react';
             count: this.props.initialValue
         };
     }
-    increment() 
+
+                            //Metodos de ciclo de vida
+    componentDidMount(){
+        console.log('El componente se ha montado');   //Cuando arranca
+    }
+    componentDidUpdate(prevProps, prevState){       //Cuando hay cambios se actualiza, prevState te enseña el estado anterior
+        console.log('El counter vale: ' + this.state.count, prevState.count)
+    }
+    componentWillUnmount(){             //Detener y eliminar el complemento de la vista
+        console.log('El counter se ha detenido');
+    }
+                        //Hasta aqui
+
+
+    increment = () => {
         this.setState({ //Cambia el estado y actualiza
             count: this.state.count + this.props.step
         });
+    }
     
-    decrement() 
+    decrement = () => {
         if(this.state.count >0){
         this.setState({
             count: this.state.count - this.props.step
         })
-    }
+    }}
     
      render() {
         return (<div className='counter'>
@@ -32,9 +49,12 @@ import React, {Component, useState} from 'react';
             <button onClick={() =>this.increment()}>Más</button>
             </div>)
     }
-} */
+}  */
 
-const Counter = props => {
+
+                //Componente funcional
+
+ const Counter = props => {
 
     const [count, setCounter] = useState(props.initialValue);
 
@@ -47,6 +67,17 @@ const Counter = props => {
     const increment = () => {
         setCounter(count + props.step)
     }
+
+    useEffect(() => {
+        console.log('El componente se ha montado');
+        return ()=> { // Alternativa a componentWillUnmount
+            console.log('El counter se ha detenido');
+        }
+    },[]);  // ALternativa a componentDidMount para funcionales, se añade array al final
+
+    useEffect(() => {
+        console.log('El componente se ha actualizado: ' + count)
+    });   // Alternativa a componentDidUpdate
     
     return (<div className='counter'>
     <button onClick={decrement}>Menos</button>
