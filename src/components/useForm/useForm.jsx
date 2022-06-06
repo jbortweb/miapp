@@ -1,5 +1,5 @@
 import React from 'react';
-import './useForm.css'
+import './useForm.scss'
 class UseForms extends React.Component {
     constructor(props) {
         super(props);

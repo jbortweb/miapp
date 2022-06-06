@@ -1,25 +1,30 @@
+@import '../../colors.scss';
+
 .useForm{
     display:flex;
     flex-direction: column;
     min-height: 50vh;
     justify-content: space-around;
     padding: 0.8em;
-    background-color: rgb(133, 65, 65);
-}
+    background-color: $solid;
 
-.useForm input,.useForm select {
+
+    input,select {
     all:unset;
     padding: 0.5em;
     border-radius: 0.3em;
-    background: rgb(208, 208, 208);
-    color: black;
-}
-.useForm button {
+    background: $ligth;
+    color: $solidDark;
+    }
+    button {
     all:unset;
     cursor: pointer;
     padding: 0.5em;
     border-radius: 0.3em;
-    background: rgb(208, 208, 208);
-    color: black;
+    background: $ligthligth;
+    color: $solidDark;
+    }
+    ::placeholder {
+        color:solidDark;
+    }
 }
-
