@@ -1,8 +1,9 @@
 
 import './App.css';
 import React, { useState } from 'react';
-import Person from './components/person.jsx'; //Importamos componentes
-import Counter from './components/counter.jsx';
+// import Person from './components/person.jsx'; //Importamos componentes
+// import Counter from './components/counter.jsx';
+import UseForms from './components/useForm/useForm';
 
                                 //  Complemento funcional con props
 
@@ -80,8 +81,10 @@ function App() {
 
 //  Funcion principal
 
+/*
 function App() {
-    const hola = <h2>Bienvenido al curso de React</h2>
+              Bienvenida y contador  
+  const hola = <h2>Bienvenido al curso de React</h2>
     const saludo = persona => <h2>Hola {persona}</h2> //Funcion flecha
     const [showCounters, setShowCounters] = useState(true);
     const quitarCounter = () => setShowCounters(false);
@@ -96,9 +99,23 @@ function App() {
         }
         <button onClick={quitarCounter}>Quitar counters</button>
         <button onClick={ponerCounter}>Poner counters</button>
+        
       </header>
     </div>
-  );
+  );*/
+
+
+function App() {    
+
+return (
+<div className="App">
+<header className="App-header">
+  <UseForms/>
+
+
+</header>
+</div>
+);
 }
 
 export default App;
