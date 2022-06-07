@@ -4,7 +4,13 @@ class UseForms extends React.Component {
     constructor(props) {
         super(props);
         this.state = {email:'',genero:''}
+        this.emailInput = React.createRef();
     }
+
+        componentDidMount() {
+            console.log(this.emailInput.current);
+            this.emailInput.current.focus();
+        }
 
         handleChange = (event) => {
             this.setState({[event.target.name]:event.target.value})   //Funcion onchange del input
@@ -20,7 +26,7 @@ class UseForms extends React.Component {
     render(){
         return (
             <form className="useForm" onSubmit={this.handleSubmit}>
-                <input type="email" name="email" onChange={this.handleChange} value={this.state.email} placeholder='Introduce tu email'/>
+                <input type="email" name="email" ref={this.emailInput} onChange={this.handleChange} value={this.state.email} placeholder='Introduce tu email'/>
                 <select name="genero" value={this.state.genero} onChange = {this.handleSelectChange}>
                     <option value="Hombre">Hombre</option>
                     <option value="Mujer">Mujer</option>
