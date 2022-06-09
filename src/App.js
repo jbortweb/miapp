@@ -3,7 +3,8 @@ import './App.css';
 import React, { useState } from 'react';
 // import Person from './components/person.jsx'; //Importamos componentes
 // import Counter from './components/counter.jsx';
-import UseForms from './components/useForm/useForm';
+//import UseForms from './components/useForm/useForm';
+import UnreadMessages from './components/UnreadMessages/UnreadMessages';
 
                                 //  Complemento funcional con props
 
@@ -104,18 +105,32 @@ function App() {
     </div>
   );*/
 
-
-function App() {    
+                      //Formulario 
+/* function App() {    
 
 return (
 <div className="App">
 <header className="App-header">
   <UseForms/>
 
-
 </header>
 </div>
 );
 }
 
+export default App; */
+
+                  //Condicionales
+
+function App() {    //Atrapamos los parametros de unreadMessages y los pasamos por props
+
+  return ( 
+    <div className="App">
+      <header className="App-header">
+      <UnreadMessages unreadMessages = {['Este es el primer mensaje','Este es el segundo mensaje']}/> 
+      </header>
+    </div>
+  );
+}
+                    
 export default App;
